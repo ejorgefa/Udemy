@@ -2,7 +2,7 @@ name: Deploy Project
 on: [push, workflow_dispatch]
 
 env:
-  WORKING_DIRECTORY: ./
+  WORKING_DIRECTORY: ./Project
 
 jobs:
   test:
