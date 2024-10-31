@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ../Project
+        working-directory: ./Project
     steps:
       - name: Get code
         uses: actions/checkout@v4.2.2
