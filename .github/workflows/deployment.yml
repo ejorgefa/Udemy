@@ -2,14 +2,14 @@ name: Deploy Project
 on: [push, workflow_dispatch]
 
 env:
-  WORKING_DIRECTORY: Project
+  working-directory: Project
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: Project
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
     steps:
       - name: Get code
         uses: actions/checkout@v4.2.2
@@ -24,6 +24,9 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
     steps:
       - name: Get code
         uses: actions/checkout@v4.2.2
