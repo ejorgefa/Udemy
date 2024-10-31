@@ -1,12 +1,16 @@
 name: Deploy Project
 on: [push, workflow_dispatch]
+^
+
+env:
+  working_directory: .github/Project
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: .github/Project
+    # defaults:
+    #   run:
+    #     working-directory: .github/Project
     steps:
       - name: Get code
         uses: actions/checkout@v4.2.2
